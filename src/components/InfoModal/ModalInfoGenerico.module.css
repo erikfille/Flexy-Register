@@ -1,0 +1,20 @@
+.modalContainer {
+    position: fixed;
+    top: 40%;
+    right: 30%;
+    z-index: 1000;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: var(--color-3b4149)
+}
+
+.title {
+    font-size: 16px;
+    color: var(--color-primary-main);
+    text-align: center;
+}
+
+.text {
+    font-size: 13px;
+    text-align: center;
+}
