@@ -41,7 +41,7 @@ export const useLogin = create((set, get) => ({
       modal("Error", `El usuario ${userData.email} no existe`, modal, null);
     } else {
       if (loggedUser.password === userData.password) {
-        console.log("Loggeado con Exito")
+        console.log("Login Exitoso");
         loginHi(loggedUser);
       } else {
         modal("Error", `La contraseña ingresada no es válida`, modal, null);
@@ -50,6 +50,12 @@ export const useLogin = create((set, get) => ({
   },
   loginHi(user) {
     const modal = useModal.getState().setModalInfo;
-    modal("¡Login Exitoso!", `¡Bienvenido a Flexy, ${user.name}!`, modal, null);
+
+    modal(
+      "¡Login Exitoso!",
+      `¡Bienvenido a Flexy, ${user.name}!`,
+      () => {},
+      []
+    );
   },
 }));

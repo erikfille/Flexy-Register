@@ -1,20 +1,44 @@
 .modalContainer {
-    position: fixed;
-    top: 40%;
-    right: 30%;
-    z-index: 1000;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: var(--color-3b4149)
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: var(--color-dark-grey);
 }
 
 .title {
-    font-size: 16px;
-    color: var(--color-primary-main);
-    text-align: center;
+  font-size: 16px;
+  color: var(--color-primary-main);
+  text-align: center;
 }
 
 .text {
-    font-size: 13px;
-    text-align: center;
+  font-size: 13px;
+  text-align: center;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 10px;
+  width: 12em;
+  height: 2em;
+  max-width: 75%;
+  background: var(--color-primary-main);
+  border: none;
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  font-feature-settings: "ss06" on, "ss04" on, "liga" off;
+  color: #ffffff;
+  max-width: 100%;
 }

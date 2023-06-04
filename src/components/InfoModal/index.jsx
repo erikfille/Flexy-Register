@@ -27,7 +27,7 @@ export default function ModalConsultaGenerico() {
         <h4 className={style.text}>{modalInfoProps.text}</h4>
         <div className="d-flex gap-15">
           <button
-            className="button"
+            className={style.button}
             onClick={() => {
               modalInfoProps.action(...modalInfoActionArgs);
               setModalInfo();
