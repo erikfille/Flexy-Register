@@ -1,0 +1,50 @@
+
+.loginContainer {
+  overflow: hidden;
+  height: 100vh
+}
+
+.formContainer {
+  background-color: transparent;
+  height: 100vh
+}
+
+.imgContainer {
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.fColor {
+  color: var(--color-primary-dark);
+  font-size: 26px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--color-primary-dark);
+}
+
+.fColor:hover {
+  color: var(--color-0CC5BA);
+}
+
+.logoContainer {
+  border-bottom: 2px solid #F0EFFB;
+  width: 100%;
+  padding: 20%;
+}
+
+@media screen and (max-width: 700px) {
+  .fColor {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .fColor {
+    font-size: 12px;
+  }
+}
