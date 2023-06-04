@@ -1,0 +1,83 @@
+.container {
+  background-color: inherit;
+}
+
+.switcher {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--color-light-grey);
+}
+
+.switcher .link {
+  font-weight: bold;
+  color: var(--color-0CC5BA);
+}
+
+.link:hover {
+  color: var(--color-3b4149);
+}
+
+.fColor {
+  color: var(--color-primary-dark);
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 125%;
+  letter-spacing: -0.01em;
+  margin-bottom: 0px !important;
+}
+
+.subtitle {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  opacity: 0.5;
+}
+
+.button:disabled {
+  color: gray;
+}
+
+.showPassword {
+  position: absolute;
+  right: 1em;
+  top: 0.75em;
+}
+
+.widgetHeight {
+  height: 100vh;
+}
+
+.inputBackground {
+  border-radius: 8px;
+  background: linear-gradient(0deg, #e0def7, #e0def7),
+    linear-gradient(0deg, #f7f7fd, #f7f7fd);
+  opacity: 0.5;
+  border: px solid rgba(0, 9, 41, 0.5);
+}
+
+.inputBackground::placeholder {
+  color: #000929;
+  opacity: 1;
+  font-weight: bold;
+}
+
+.inputBackground:focus {
+  box-shadow: 5 5 5 0.2rem rgba(234, 0, 255, 0.25) !important;
+  border-color: #7065f0 !important;
+}
