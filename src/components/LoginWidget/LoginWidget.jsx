@@ -90,11 +90,13 @@ export default function LoginWidget(props) {
     <div
       className={`${styles.container} container d-flex flex-column align-items-center`}
     >
-      <div className={`${styles.titleContainer} align-items-left`}>
-        <h1 className={`${styles.fColor} ${styles.title}`}>¡Bienvenido!</h1>
-        <p className={`${styles.fColor} ${styles.subtitle}`}>
-          {childProps.subtitle}
-        </p>
+      <div className="col-10 col-md-12 col-xl-8">
+        <div className={`${styles.titleContainer} align-items-left`}>
+          <h1 className={`${styles.fColor} ${styles.title}`}>¡Bienvenido!</h1>
+          <p className={`${styles.fColor} ${styles.subtitle}`}>
+            {childProps.subtitle}
+          </p>
+        </div>
       </div>
       <div className="col-10 col-md-12 col-xl-8">
         {childProps.type === "signup" && (
@@ -106,7 +108,7 @@ export default function LoginWidget(props) {
         <form className="d-flex flex-column" onSubmit={handleSubmit}>
           {childProps.type === "signup" && (
             <div className="d-flex flex-column flex-lg-row mb-2 mb-2">
-              <div className="mb-2 w-100">
+              <div className="mb-3 w-100">
                 <StyledInput
                   placeholder="Nombre y Apellido"
                   field="name"
@@ -119,7 +121,7 @@ export default function LoginWidget(props) {
           )}
           {childProps.type === "signup" && (
             <div className="d-flex flex-column flex-lg-row mb-2 mb-2">
-              <div className="mb-2 w-100">
+              <div className="mb-3 w-100">
                 <StyledInput
                   placeholder="+54 01 0200 000"
                   field="phone"
@@ -132,7 +134,7 @@ export default function LoginWidget(props) {
             </div>
           )}
           <div className="d-flex flex-column flex-lg-row mb-2 mb-2">
-            <div className="mb-2 w-100">
+            <div className="mb-3 w-100">
               <StyledInput
                 placeholder="hola@tuemail.com"
                 field="email"
@@ -168,15 +170,18 @@ export default function LoginWidget(props) {
               )}
             </div>
           </div>
+          <div className={styles.forgotPassword}>
+            <a onClick={() => forgotPasswordModal}>¿Olvidaste tu contraseña?</a>
+          </div>
           <button
-            className={`button w-100 mb-3 ${styles.button}`}
+            className={`w-100 my-3 ${styles.button}`}
             disabled={incomplete}
           >
             {childProps.button}
           </button>
         </form>
       </div>
-      <div className="text-center mb-5">
+      <div className="text-center mt-3 mb-5">
         <span className={`${styles.fColor} ${styles.switcher}`}>
           {childProps.message}
           <Link to={childProps.anchorPath}>

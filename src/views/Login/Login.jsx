@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation, NavLink } from "react-router-dom";
 import LoginWidget from "../../components/LoginWidget/LoginWidget";
 import loginImg from "../../assets/img/inicia-sesión-agente.png";
+import hamburguerIcon from "../../assets/icons/hambuguer-icon.svg";
 import Logo from "/logo.svg";
 
 import styles from "./Login.module.css";
@@ -42,11 +43,16 @@ export default function Login() {
           className={`col-12 col-md-5 col-xl-4 d-flex justify-content-center align-items-center ${styles.formContainer} mt-4`}
         >
           <div
-            className={`row position-absolute top-0 start-0 p-4 ${styles.logoContainer}`}
+            className={`row position-absolute top-0 end-0 p-4 ${styles.logoContainer}`}
           >
-            <NavLink to="#">
-              <img src={Logo} alt="FlexyLogo" width="90px" />
+            <NavLink to="#" className={`col-3`}>
+              <img src={Logo} alt="FlexyLogo" className="my-2" />
             </NavLink>
+            <div
+              className={`col-9 d-flex justify-content-end align-items-center`}
+            >
+              <img src={hamburguerIcon} alt="dropdownIcon" width="24px" />
+            </div>
           </div>
           <LoginWidget childProps={childProps} />
         </div>

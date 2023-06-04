@@ -1,12 +1,11 @@
-
 .loginContainer {
   overflow: hidden;
-  height: 100vh
+  height: 100vh;
 }
 
 .formContainer {
   background-color: transparent;
-  height: 100vh
+  height: 100vh;
 }
 
 .imgContainer {
@@ -32,9 +31,8 @@ a {
 }
 
 .logoContainer {
-  border-bottom: 2px solid #F0EFFB;
   width: 100%;
-  padding: 20%;
+  border-bottom: 2px solid #f0effb;
 }
 
 @media screen and (max-width: 700px) {
