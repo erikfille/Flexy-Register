@@ -5,7 +5,7 @@
 }
 
 .app {
-  width: 100%;
+  width: 100vh;
   height: 100vh;
 }
 
@@ -42,14 +42,3 @@
 }
 
 /*** Colores Fin ***/
-
-/*** Boton ***/
-
-.button {
-  border: none;
-  padding: 4px 15px;
-  font-size: 14px;
-  font-weight: 600;
-  background-color: var(--color-0CC5BA);
-  border-radius: 4px;
-}
