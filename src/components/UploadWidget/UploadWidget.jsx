@@ -1,34 +1,18 @@
 import React, { useRef, useState } from "react";
-import imageIcon from "../../assets/icons/image-upload.svg";
+import { arrayBufferToBase64 } from "../../utils/filesUploadManager";
 import styles from "./uploadWidget.module.css";
 
-export default function UploadWidget({ label, imageGetter }) {
+export default function UploadWidget({
+  label,
+  image,
+  imageFlag,
+  updateImage,
+  error,
+}) {
   const inputRef = useRef(null);
-
-  const [image, setImage] = useState(imageIcon);
-
-  const [imageFlag, setImageFlag] = useState(false);
 
   const handleInput = () => {
     inputRef.current?.click();
-  };
-
-  const updateImage = (img) => {
-    sessionStorage.setItem("userProfilePicture", img);
-    setImage(img);
-    setImageFlag(true);
-    imageGetter(img)
-  };
-
-  const arrayBufferToBase64 = (arrayBuffer) => {
-    let binary = "";
-    const bytes = new Uint8Array(arrayBuffer);
-
-    bytes.forEach((byte) => {
-      binary += String.fromCharCode(byte);
-    });
-
-    return window.btoa(binary);
   };
 
   const handleFileUpload = (e) => {
@@ -53,22 +37,25 @@ export default function UploadWidget({ label, imageGetter }) {
   };
 
   return (
-    <div className={styles.container}>
-      <img
-        src={image}
-        onClick={handleInput}
-        tabIndex={0}
-        className={styles.profileImg}
-      />
-      <input
-        type="file"
-        ref={inputRef}
-        onChange={(e) => handleFileUpload(e)}
-        className={styles.hideInput}
-      />
-      <span className={styles.label} onClick={handleInput} tabIndex={0}>
-        {!imageFlag ? label : "Cambiar imagen"}
-      </span>
+    <div className={styles.widgetContainer}>
+      <div className={styles.inputContainer}>
+        <img
+          src={image}
+          onClick={handleInput}
+          tabIndex={0}
+          className={styles.profileImg}
+        />
+        <input
+          type="file"
+          ref={inputRef}
+          onChange={(e) => handleFileUpload(e)}
+          className={styles.hideInput}
+        />
+        <p className={styles.label} onClick={handleInput} tabIndex={0}>
+          {!imageFlag ? label : "Cambiar imagen"}
+        </p>
+      </div>
+      <div>{error && <p className={`${styles.errorMessage}`}>{error}</p>}</div>
     </div>
   );
 }

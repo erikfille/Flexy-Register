@@ -17,7 +17,7 @@ export default function Login() {
   if (actualLocation === "/login") {
     childProps = {
       type: "login",
-      subtitle: "Ingrese sus datos para acceder",
+      subtitle: "Ingresá tus datos para acceder",
       button: "Ingresar",
       message: "¿No tenés cuenta?",
       accountAnchor: "¡Convertite ahora en un agente Flexy!",

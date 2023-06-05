@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useModal } from "../../hooks/useModals";
-import style from "./ModalInfoGenerico.module.css";
+import style from "./modalInfoGenerico.module.css";
 
 export default function ModalConsultaGenerico() {
   const [isOpen, setIsOpen] = useState(false);

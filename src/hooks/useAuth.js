@@ -21,7 +21,7 @@ export const useLogin = create((set, get) => ({
 
     saveToStorage("simulatedDatabase", newDatabase);
 
-    loginHi(userData);
+    loginHi(userData, "¡Registro exitoso!");
   },
   loginUser: (userData) => {
     const { loginHi } = get();
@@ -38,21 +38,19 @@ export const useLogin = create((set, get) => ({
     );
 
     if (!loggedUser) {
-      modal("Error", `El usuario ${userData.email} no existe`, modal, null);
+      modal("Error", `El usuario ${userData.email} no existe`, () => {}, []);
     } else {
       if (loggedUser.password === userData.password) {
-        console.log("Login Exitoso");
-        loginHi(loggedUser);
+        loginHi(loggedUser, "¡Login exitoso!");
       } else {
-        modal("Error", `La contraseña ingresada no es válida`, modal, null);
+        modal("Error", `La contraseña ingresada no es válida`, () => {}, []);
       }
     }
   },
-  loginHi(user) {
+  loginHi(user, title) {
     const modal = useModal.getState().setModalInfo;
-
     modal(
-      "¡Login Exitoso!",
+      title,
       `¡Bienvenido a Flexy, ${user.name}!`,
       () => {},
       []
