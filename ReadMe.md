@@ -8,7 +8,7 @@ Prueba técnica para la app Flexy.
 
 El boilerplate de este proyecto se creó utilizando Vite (https://vitejs.dev), y sus comandos son los proporcionados por la herramienta.
 
-Para correr el proyecto en el localHost, es necesario el comando `run dev`.
+Para correr el proyecto en el localHost, primero es necesario instalar las dependencias con `install` y luego correrlo con el comando `run dev`.
 
 ## Características del proyecto
 
