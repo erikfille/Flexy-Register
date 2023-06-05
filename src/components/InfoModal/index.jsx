@@ -18,7 +18,7 @@ export default function ModalConsultaGenerico() {
 
   return (
     <div
-      className={`${style.modalContainer} col-md-4 p-3`}
+      className={`${style.modalContainer} col-s-5 col-md-4 p-3`}
       style={{ display: isOpen ? "block" : "none" }}
     >
       <div className="d-flex flex-column align-items-center gap-10">
