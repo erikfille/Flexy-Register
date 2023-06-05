@@ -36,7 +36,7 @@ Dado que este proyecto no cuenta con un backend real, para simular una base de d
 
 - Al loguearse correctamente, se disparará el mismo modal (con otro texto); al existir problemas con el login, el modal informará al usuario del problema.
 
-- "Recuperar Contraseña" no tiene un funcionamiento práctico, ya que no existe una pagina de recuperación de contraseña con un form adecuado para ello.
+- "Recuperar Contraseña" dispara un modal donde el usuario puede escribir su correo, con la intención de enviar luego un codigo de recuperación a su casilla.
 
 ## Tecnologías utilizadas
 
