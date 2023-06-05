@@ -170,7 +170,7 @@ export default function LoginWidget(props) {
           <div className="d-flex flex-column flex-sm-row gap-10">
             <div className="mb-3 w-100 position-relative">
               <StyledInput
-                placeholder="Ingresa tu contraseña"
+                placeholder="Ingresá tu contraseña"
                 field="password"
                 type={show ? "text" : "password"}
                 value={userData.password}
