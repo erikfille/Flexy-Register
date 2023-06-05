@@ -34,7 +34,7 @@ export default function ForgotPassModal() {
         <div className="mb-3 w-100">
           <StyledInput
             placeholder="tu@email.com"
-            field="email"
+            field="userEmail"
             value={email}
             onChange={handleInputChange}
           ></StyledInput>

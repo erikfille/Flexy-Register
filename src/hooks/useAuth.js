@@ -6,6 +6,7 @@ export const useLogin = create((set, get) => ({
   user: {},
   signUp: (userData) => {
     const { loginHi } = get();
+    const modal = useModal.getState().setModalInfo;
 
     let simulatedDatabase = getFromStorage("simulatedDatabase");
 
@@ -15,7 +16,13 @@ export const useLogin = create((set, get) => ({
 
     if (simulatedDatabase?.length) newDatabase = simulatedDatabase;
 
-    newDatabase.push(userData);
+    let checkUser = newDatabase.find((user) => user.email === userData.email);
+    
+    if (checkUser) {
+      return modal("Error", `El usuario ${userData.email} ya existe`, () => {}, []);
+    } else {
+      newDatabase.push(userData);
+    }
 
     saveToStorage("simulatedDatabase", newDatabase);
 
