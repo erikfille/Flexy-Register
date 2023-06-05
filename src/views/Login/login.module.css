@@ -1,5 +1,4 @@
 .loginContainer {
-  overflow: hidden;
   height: 100vh;
 }
 
@@ -9,7 +8,6 @@
 }
 
 .imgContainer {
-  overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -33,6 +31,7 @@ a {
 .logoContainer {
   width: 100%;
   border-bottom: 2px solid #f0effb;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 700px) {
