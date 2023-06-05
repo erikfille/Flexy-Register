@@ -51,7 +51,7 @@ export default function Login() {
               <img src={Logo} alt="FlexyLogo" className="my-2" />
             </NavLink>
             <div
-              className={`col-9 d-flex justify-content-end align-items-center`}
+              className={`col-9 d-flex d-md-none justify-content-end align-items-center`}
             >
               <img src={hamburguerIcon} alt="dropdownIcon" width="24px" />
             </div>
