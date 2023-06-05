@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Login from "./views/Login/Login";
 import InfoModal from "./components/InfoModal";
+import ForgotPassModal from "./components/ForgotPassModal";
 import "./App.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/signup" element={<Login />} />
       </Routes>
       <InfoModal />
+      <ForgotPassModal />
     </div>
   );
 }

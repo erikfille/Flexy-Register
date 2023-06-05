@@ -74,7 +74,7 @@
 }
 
 .button:disabled {
-  background-color: var(--color-dark-grey);
+  background-color: lightgray;
   color: gray;
 }
 
@@ -82,6 +82,7 @@
   position: absolute;
   right: 1em;
   top: 0.75em;
+  cursor: pointer;
 }
 
 .forgotPassword {
@@ -92,6 +93,11 @@
   line-height: 140%;
   margin: auto;
   color: var(--color-primary-main);
+  cursor: pointer;
+}
+
+.forgotPassword:hover {
+  color: var(--color-primary-dark);
 }
 
 .widgetHeight {

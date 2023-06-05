@@ -11,10 +11,12 @@ import validation from "./validation";
 
 // Store
 import { useLogin } from "../../hooks/useAuth";
+import { useModal } from "../../hooks/useModals";
 
 // icons
 import eyeOutline from "../../assets/icons/EyeOutline.svg";
 import eyeOutlineInvisible from "../../assets/icons/EyeOutlineInvisible.svg";
+import imageIcon from "../../assets/icons/image-upload.svg";
 
 import styles from "./loginWidget.module.css";
 
@@ -27,7 +29,8 @@ export default function LoginWidget(props) {
     phone: "",
     email: "",
     password: "",
-    image: "",
+    image: imageIcon,
+    imageFlag: false,
   });
 
   const [errors, setErrors] = useState({
@@ -35,7 +38,10 @@ export default function LoginWidget(props) {
     phone: "",
     email: "",
     password: "",
+    image: "",
   });
+
+  const [imageFlag, setImageFlag] = useState(false);
 
   const [incomplete, setIncomplete] = useState(false);
 
@@ -43,6 +49,8 @@ export default function LoginWidget(props) {
     state.signUp,
     state.loginUser,
   ]);
+
+  const [setModalForgotPass] = useModal((state) => [state.setModalForgotPass]);
 
   useEffect(() => {
     if (childProps.type === "signup") {
@@ -82,8 +90,19 @@ export default function LoginWidget(props) {
     }
   };
 
-  const imageGetter = (url) => {
-    setUserData({ ...userData, image: url });
+  const updateImage = (img) => {
+    sessionStorage.setItem("userProfilePicture", img);
+    setUserData({ ...userData, image: img, imageFlag: true });
+    setErrors(
+      validation({
+        ...userData,
+        imageFlag: true,
+      })
+    );
+  };
+
+  const forgotPasswordModal = () => {
+    setModalForgotPass();
   };
 
   return (
@@ -102,7 +121,10 @@ export default function LoginWidget(props) {
         {childProps.type === "signup" && (
           <UploadWidget
             label="Subí tu foto de perfil"
-            imageGetter={imageGetter}
+            image={userData.image}
+            imageFlag={userData.imageFlag}
+            updateImage={updateImage}
+            error={errors.image}
           />
         )}
         <form className="d-flex flex-column" onSubmit={handleSubmit}>
@@ -171,7 +193,9 @@ export default function LoginWidget(props) {
             </div>
           </div>
           <div className={styles.forgotPassword}>
-            <a onClick={() => forgotPasswordModal}>¿Olvidaste tu contraseña?</a>
+            <a onClick={() => forgotPasswordModal()}>
+              ¿Olvidaste tu contraseña?
+            </a>
           </div>
           <button
             className={`w-100 my-3 ${styles.button}`}
