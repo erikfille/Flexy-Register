@@ -4,6 +4,16 @@
 
 Prueba técnica para la app Flexy.
 
+Desarrollar un front de acuerdo al maquetado pasado por Figma
+
+### Version Desktop
+
+<img src="./src/assets/prototypes/Registrate-Agente-Desktop.jpg" width="75%">
+
+### Version Responsive
+
+<img src="./src/assets/prototypes/Registrate-Agente-Mobile.jpg" width="25%">
+
 ## Boilerplate del proyecto
 
 El boilerplate de este proyecto se creó utilizando Vite (https://vitejs.dev), y sus comandos son los proporcionados por la herramienta.
