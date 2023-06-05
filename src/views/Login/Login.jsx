@@ -42,10 +42,10 @@ export default function Login() {
     <div className={styles.loginContainer}>
       <div className="row">
         <div
-          className={`col-12 col-md-5 col-xl-4 d-flex justify-content-center align-items-center ${styles.formContainer} mt-4`}
+          className={`col-12 col-md-5 col-xl-4 d-flex justify-content-center align-items-center ${styles.formContainer}`}
         >
           <div
-            className={`row position-absolute top-0 end-0 p-4 ${styles.logoContainer}`}
+            className={`row position-fixed top-0 start-0 p-4 ${styles.logoContainer}`}
           >
             <NavLink to="#" className={`col-3`}>
               <img src={Logo} alt="FlexyLogo" className="my-2" />

@@ -2,9 +2,19 @@
   height: 100vh;
 }
 
+.logoContainer {
+  width: 100%;
+  height: var(--navbar-height);
+  border-bottom: 2px solid #f0effb;
+}
+
 .formContainer {
   background-color: transparent;
+  min-height: 100vh;
   height: 100vh;
+  margin: var(--navbar-height) auto auto auto;
+  overflow: auto;
+  padding-right: 0px !important;
 }
 
 .imgContainer {
@@ -26,12 +36,6 @@ a {
 
 .fColor:hover {
   color: var(--color-0CC5BA);
-}
-
-.logoContainer {
-  width: 100%;
-  border-bottom: 2px solid #f0effb;
-  overflow: hidden;
 }
 
 @media screen and (max-width: 700px) {

@@ -1,5 +1,7 @@
 .container {
   background-color: inherit;
+  margin: auto;
+  padding: 50px 30px 100px 30px;
 }
 
 .switcher {
