@@ -42,16 +42,14 @@ export default function Login() {
     <div className={styles.loginContainer}>
       <div className="row">
         <div
-          className={`col-12 col-md-5 col-xl-4 d-flex justify-content-center align-items-center ${styles.formContainer}`}
+          className={`col-12 col-md-6 col-xl-5 d-flex justify-content-center align-items-center ${styles.formContainer}`}
         >
-          <div
-            className={`row position-fixed top-0 start-0 p-4 ${styles.logoContainer}`}
-          >
-            <NavLink to="#" className={`col-3`}>
-              <img src={Logo} alt="FlexyLogo" className="my-2" />
+          <div className={`${styles.logoContainer}`}>
+            <NavLink to="#">
+              <img src={Logo} alt="FlexyLogo" />
             </NavLink>
             <div
-              className={`col-9 d-flex d-md-none justify-content-end align-items-center`}
+              className={styles.hamburguerIcon}
             >
               <img src={hamburguerIcon} alt="dropdownIcon" width="24px" />
             </div>
@@ -59,11 +57,10 @@ export default function Login() {
           <LoginWidget childProps={childProps} />
         </div>
         <div
-          className={`col-8 col-md-7 col-xl-8 d-none d-md-flex position-relative ${styles.imgContainer}`}
-          style={{
-            backgroundImage: `url(${loginImg})`,
-          }}
-        ></div>
+          className={`col-md-6 col-xl-7 d-s-none d-md-flex position-relative ${styles.imgContainer}`}
+        >
+          <img src={loginImg} alt="Login Image" />
+        </div>
       </div>
     </div>
   );

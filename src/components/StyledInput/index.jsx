@@ -15,7 +15,7 @@ export default function StyledInput({
   const handleVisited = () => setVisited(true);
 
   return (
-    <>
+    <div className={styles.inputContainer}>
       <input
         type={type}
         placeholder={placeholder}
@@ -27,6 +27,6 @@ export default function StyledInput({
         onBlur={handleVisited}
       />
       {errorCondition && <p className={`${styles.errorMessage}`}>{error}</p>}
-    </>
+    </div>
   );
 }

@@ -29,17 +29,19 @@
   padding-bottom: 80px;
 }
 
-/*** Colores ***/
-
 :root {
   --color-primary-dark: #000929;
   --color-primary-main: #7065f0;
   --color-dark-grey: #4a4b4d;
   --color-light-grey: ##6c727f;
   --color-f8f8f8: #f8f8f8;
-  --color-icon-grey: ##9EA3AE;
+  --color-icon-grey: ##9ea3ae;
   --color-danger: #d32f2f;
   --navbar-height: 96px;
 }
 
-/*** Colores Fin ***/
+@media screen and (max-width: 768px) {
+  :root {
+    --navbar-height: 72px;
+  }
+}

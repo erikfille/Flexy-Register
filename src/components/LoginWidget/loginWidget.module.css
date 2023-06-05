@@ -1,7 +1,18 @@
 .container {
   background-color: inherit;
-  margin: auto;
-  padding: 50px 30px 100px 30px;
+  margin: 33px auto auto 93px;
+  padding: 50px 30px 80px 30px;
+  max-width: 412px;
+  width: 100%;
+}
+
+.form {
+  width: 100%;
+}
+
+.passwordContainer {
+  width: 100%;
+  position: relative;
 }
 
 .switcher {
@@ -30,8 +41,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  justify-content: flex-start;
   gap: 8px;
+  width: 100%;
+  margin-bottom: 24px;
 }
 
 .title {
@@ -51,6 +64,7 @@
   line-height: 150%;
   opacity: 0.5;
   align-items: flex-start;
+  margin-bottom: 0px;
 }
 
 .button {
@@ -60,7 +74,7 @@
   align-items: center;
   padding: 12px 24px;
   gap: 10px;
-  width: 352px;
+  width: 100%;
   height: 48px;
   background: var(--color-primary-main);
   border: none;
@@ -72,7 +86,7 @@
   text-align: center;
   font-feature-settings: "ss06" on, "ss04" on, "liga" off;
   color: #ffffff;
-  max-width: 100%;
+  margin: 25px 0px 32px 0px;
 }
 
 .button:disabled {
@@ -82,7 +96,7 @@
 
 .showPassword {
   position: absolute;
-  right: 1em;
+  right: 1.5em;
   top: 0.75em;
   cursor: pointer;
 }
@@ -123,4 +137,36 @@
 .inputBackground:focus {
   box-shadow: 5 5 5 0.2rem rgba(234, 0, 255, 0.25) !important;
   border-color: #7065f0 !important;
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    margin: 33px auto auto auto;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .container {
+    margin: 33px auto auto 5.66vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 12px auto auto auto;
+    padding: 50px 24px 100px 24px;
+  }
+
+  .titleContainer {
+    align-items: center;
+    margin-bottom: 31px;
+  }
+
+  .button {
+    margin: 27px 0px 20px 0px;
+  }
+
+  .forgotPassword {
+    margin: -10px auto auto auto;
+  }
 }

@@ -31,14 +31,12 @@ export default function ForgotPassModal() {
         <h4 className={style.text}>
           Indicanos el correo con el que te registraste
         </h4>
-        <div className="mb-3 w-100">
           <StyledInput
             placeholder="tu@email.com"
             field="userEmail"
             value={email}
             onChange={handleInputChange}
           ></StyledInput>
-        </div>
         <div className="d-flex gap-10">
           <button
             className={`${style.button}`}

@@ -1,5 +1,7 @@
 .widgetContainer {
   display: block;
+  width: 100%;
+  max-width: 352px;
   margin-bottom: 1.5rem;
 }
 

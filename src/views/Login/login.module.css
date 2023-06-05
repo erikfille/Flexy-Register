@@ -3,6 +3,12 @@
 }
 
 .logoContainer {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  top: 0px;
+  left: 0px;
+  padding: 1.5rem !important;
   width: 100%;
   height: var(--navbar-height);
   border-bottom: 2px solid #f0effb;
@@ -12,15 +18,20 @@
   background-color: transparent;
   min-height: 100vh;
   height: 100vh;
-  margin: var(--navbar-height) auto auto auto;
+  margin: var(--navbar-height) 0px 0px 0px;
   overflow: auto;
-  padding-right: 0px !important;
+  padding: 0px !important;
 }
 
 .imgContainer {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  object-position: 50% 50%;
+}
+
+.imgContainer img {
+  object-fit: cover;
 }
 
 .fColor {
@@ -38,6 +49,10 @@ a {
   color: var(--color-0CC5BA);
 }
 
+.hamburguerIcon {
+  display: none;
+}
+
 @media screen and (max-width: 700px) {
   .fColor {
     font-size: 12px;
@@ -47,5 +62,21 @@ a {
 @media screen and (max-width: 992px) {
   .fColor {
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .imgContainer img {
+    max-width: 950px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hamburguerIcon {
+    display: flex;
+  }
+
+  .logoContainer {
+    justify-content: space-between;
   }
 }

@@ -102,105 +102,81 @@ export default function LoginWidget(props) {
 
   return (
     <div
-      className={`${styles.container} container d-flex flex-column align-items-center`}
+      className={`${styles.container} d-flex flex-column align-items-center`}
     >
-      <div className="col-10 col-md-12 col-xl-8">
-        <div className={`${styles.titleContainer} align-items-left`}>
+        <div className={styles.titleContainer}>
           <h1 className={`${styles.fColor} ${styles.title}`}>¡Bienvenido!</h1>
           <p className={`${styles.fColor} ${styles.subtitle}`}>
             {childProps.subtitle}
           </p>
         </div>
-      </div>
-      <div className="col-10 col-md-12 col-xl-8">
+      {childProps.type === "signup" && (
+        <UploadWidget
+          label="Subí tu foto de perfil"
+          image={userData.image}
+          imageFlag={userData.imageFlag}
+          updateImage={updateImage}
+          error={errors.image}
+        />
+      )}
+      <form className={styles.form} onSubmit={handleSubmit}>
         {childProps.type === "signup" && (
-          <UploadWidget
-            label="Subí tu foto de perfil"
-            image={userData.image}
-            imageFlag={userData.imageFlag}
-            updateImage={updateImage}
-            error={errors.image}
-          />
+          <StyledInput
+            placeholder="Nombre y Apellido"
+            field="name"
+            value={userData.name}
+            onChange={handleInputChange}
+            error={errors.name}
+          ></StyledInput>
         )}
-        <form className="d-flex flex-column" onSubmit={handleSubmit}>
-          {childProps.type === "signup" && (
-            <div className="d-flex flex-column flex-lg-row mb-2 mb-2">
-              <div className="mb-3 w-100">
-                <StyledInput
-                  placeholder="Nombre y Apellido"
-                  field="name"
-                  value={userData.name}
-                  onChange={handleInputChange}
-                  error={errors.name}
-                ></StyledInput>
-              </div>
-            </div>
+        {childProps.type === "signup" && (
+          <StyledInput
+            placeholder="+54 01 0200 000"
+            field="phone"
+            value={userData.phone}
+            onChange={handleInputChange}
+            type="number"
+            error={errors.phone}
+          ></StyledInput>
+        )}
+        <StyledInput
+          placeholder="hola@tuemail.com"
+          field="email"
+          value={userData.email}
+          onChange={handleInputChange}
+          type="email"
+          error={errors.email}
+        />
+        <div className={styles.passwordContainer}>
+          <StyledInput
+            placeholder="Ingresá tu contraseña"
+            field="password"
+            type={show ? "text" : "password"}
+            value={userData.password}
+            onChange={handleInputChange}
+            error={errors.password}
+          />
+          {show ? (
+            <img
+              src={eyeOutlineInvisible}
+              onClick={() => setShow(false)}
+              className={styles.showPassword}
+            />
+          ) : (
+            <img
+              src={eyeOutline}
+              onClick={() => setShow(true)}
+              className={styles.showPassword}
+            />
           )}
-          {childProps.type === "signup" && (
-            <div className="d-flex flex-column flex-lg-row mb-2 mb-2">
-              <div className="mb-3 w-100">
-                <StyledInput
-                  placeholder="+54 01 0200 000"
-                  field="phone"
-                  value={userData.phone}
-                  onChange={handleInputChange}
-                  type="number"
-                  error={errors.phone}
-                ></StyledInput>
-              </div>
-            </div>
-          )}
-          <div className="d-flex flex-column flex-lg-row mb-2 mb-2">
-            <div className="mb-3 w-100">
-              <StyledInput
-                placeholder="hola@tuemail.com"
-                field="email"
-                value={userData.email}
-                onChange={handleInputChange}
-                type="email"
-                error={errors.email}
-              />
-            </div>
-          </div>
-          <div className="d-flex flex-column flex-sm-row gap-10">
-            <div className="mb-3 w-100 position-relative">
-              <StyledInput
-                placeholder="Ingresá tu contraseña"
-                field="password"
-                type={show ? "text" : "password"}
-                value={userData.password}
-                onChange={handleInputChange}
-                error={errors.password}
-              />
-              {show ? (
-                <img
-                  src={eyeOutlineInvisible}
-                  onClick={() => setShow(false)}
-                  className={styles.showPassword}
-                />
-              ) : (
-                <img
-                  src={eyeOutline}
-                  onClick={() => setShow(true)}
-                  className={styles.showPassword}
-                />
-              )}
-            </div>
-          </div>
-          <div className={styles.forgotPassword}>
-            <a onClick={() => forgotPasswordModal()}>
-              ¿Olvidaste tu contraseña?
-            </a>
-          </div>
-          <button
-            className={`w-100 my-3 ${styles.button}`}
-            disabled={incomplete}
-          >
-            {childProps.button}
-          </button>
-        </form>
-      </div>
-      <div className="text-center mt-3 mb-5">
+        </div>
+        <div className={styles.forgotPassword}>
+          <a onClick={() => forgotPasswordModal()}>¿Olvidaste tu contraseña?</a>
+        </div>
+        <button className={styles.button} disabled={incomplete}>
+          {childProps.button}
+        </button>
+      </form>
         <span className={`${styles.fColor} ${styles.switcher}`}>
           {childProps.message}
           <Link to={childProps.anchorPath}>
@@ -210,7 +186,6 @@ export default function LoginWidget(props) {
             </span>
           </Link>
         </span>
-      </div>
     </div>
   );
 }
