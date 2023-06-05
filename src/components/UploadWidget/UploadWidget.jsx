@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { arrayBufferToBase64 } from "../../utils/filesUploadManager";
 import styles from "./uploadWidget.module.css";
 

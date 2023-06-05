@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useModal } from "../../hooks/useModals";
 import StyledInput from "../StyledInput";
 import style from "./forgotPassModal.module.css";

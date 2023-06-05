@@ -1,9 +1,11 @@
 import React from "react";
 import { useLocation, NavLink } from "react-router-dom";
+
 import LoginWidget from "../../components/LoginWidget/LoginWidget";
-import loginImg from "../../assets/img/inicia-sesión-agente.png";
-import hamburguerIcon from "../../assets/icons/hambuguer-icon.svg";
+
 import Logo from "/logo.svg";
+import hamburguerIcon from "../../assets/icons/hambuguer-icon.svg";
+import loginImg from "../../assets/img/inicia-sesión-agente.png";
 
 import styles from "./Login.module.css";
 

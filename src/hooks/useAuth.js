@@ -17,8 +17,6 @@ export const useLogin = create((set, get) => ({
 
     newDatabase.push(userData);
 
-    console.log("New Database", newDatabase);
-
     saveToStorage("simulatedDatabase", newDatabase);
 
     loginHi(userData, "¡Registro exitoso!");
@@ -27,11 +25,7 @@ export const useLogin = create((set, get) => ({
     const { loginHi } = get();
     const modal = useModal.getState().setModalInfo;
 
-    console.log("User Data", userData);
-
     let simulatedDatabase = getFromStorage("simulatedDatabase");
-
-    console.log("recovered Database", simulatedDatabase);
 
     let loggedUser = simulatedDatabase.find(
       (user) => user.email === userData.email
@@ -49,11 +43,6 @@ export const useLogin = create((set, get) => ({
   },
   loginHi(user, title) {
     const modal = useModal.getState().setModalInfo;
-    modal(
-      title,
-      `¡Bienvenido a Flexy, ${user.name}!`,
-      () => {},
-      []
-    );
+    modal(title, `¡Bienvenido a Flexy, ${user.name}!`, () => {}, []);
   },
 }));

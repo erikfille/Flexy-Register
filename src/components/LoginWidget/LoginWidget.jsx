@@ -1,19 +1,14 @@
-// dependencies
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-// components
 import StyledInput from "../StyledInput";
 import UploadWidget from "../UploadWidget/UploadWidget";
 
-// Validations
 import validation from "./validation";
 
-// Store
 import { useLogin } from "../../hooks/useAuth";
 import { useModal } from "../../hooks/useModals";
 
-// icons
 import eyeOutline from "../../assets/icons/EyeOutline.svg";
 import eyeOutlineInvisible from "../../assets/icons/EyeOutlineInvisible.svg";
 import imageIcon from "../../assets/icons/image-upload.svg";
