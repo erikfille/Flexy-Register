@@ -6,6 +6,8 @@ Prueba técnica para la app Flexy.
 
 Desarrollar un front de acuerdo al maquetado pasado por Figma
 
+Maquetado:
+
 ### Version Desktop
 
 <img src="./src/assets/prototypes/Registrate-Agente-Desktop.jpg" width="75%">
@@ -28,9 +30,9 @@ Dado que este proyecto no cuenta con un backend real, para simular una base de d
 
 ## Comportamiento esperado
 
-- Los inputs cuentan con validaciones propias. Si no se cumplen estas condiciones, aparecerá un mensaje de error.
+- Validación de Inputs: Los inputs cuentan con validaciones propias. Si no se cumplen estas condiciones, aparecerá un mensaje de error.
 
-- El botón del formulario no se activará hasta que no se complete toda la info necesaria y no existan errores en la misma.
+- Validación del Formulario: El botón del formulario no se activará hasta que no se complete toda la info necesaria y no existan errores en la misma.
 
 - Al registrarse correctamente, se disparará un modal, dando la bienvenida al usuario, pero al no tener una pagina de inicio, no habrá una redirección. El usuario se guardará en un array de usuarios que simula la base de datos y se guardará en el sessionStorage del navegador.
 
@@ -59,6 +61,8 @@ El proyecto utiliza:
 - UploadWidget: Es un input estilado tal como se indica en el maquetado de Figma. Su función es recibir un archivo del usuario, y convertirlo a base64 para poder guardarse con el resto de la info del usuario en el sessionStorage, ademas de poder mostrarlo en el formulario.
 
 - InfoModal: Es un modal cuyo único fin es indicar algo al usuario, dando unicamente la opción de "continuar".
+
+- ForgotPassModal: Es un modal cuyo fin es que el usuario pueda completar con su dirección de correo para enviar un mensaje de recuperación de contraseña al mismo.
 
 ### Utils
 
