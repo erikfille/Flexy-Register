@@ -37,6 +37,8 @@
   --color-f8f8f8: #f8f8f8;
   --color-icon-grey: ##9ea3ae;
   --color-danger: #d32f2f;
+  --color-disabled-button-background: #9a96c2;
+  --color-disabled-button: #d1cdf7;
   --navbar-height: 96px;
 }
 

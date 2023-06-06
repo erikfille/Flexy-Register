@@ -90,8 +90,8 @@
 }
 
 .button:disabled {
-  background-color: lightgray;
-  color: gray;
+  background-color: var(--color-disabled-button-background);
+  color: var(--color-disabled-button);
 }
 
 .showPassword {
